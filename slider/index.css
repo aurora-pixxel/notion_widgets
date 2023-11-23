@@ -1,39 +1,85 @@
-/* Base styling for the slider */
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lexend", sans-serif;
+  background-color: #362a2b;
+  color: #e5ebf3;
+}
+
 .slider {
-  max-width: 100%; /* Ensures it doesn't exceed the width of its container */
-  margin: auto; /* Centers the slider */
+  position: relative;
+  width: 100%;
+  height: 80vh; /* Adjust height as necessary */
+  overflow: hidden;
 }
 
-/* Styling for individual slides */
 .slide {
-  width: 100%; /* Each slide takes the full width of the slider */
-  height: auto; /* Adjust the height automatically */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
 }
 
-/* Ensure that the slider maintains aspect ratio */
-@media (min-aspect-ratio: 16/9) {
-  .slider {
-    width: 100%;
-    height: auto;
-  }
+.slide.current {
+  opacity: 1;
 }
 
-@media (max-aspect-ratio: 16/9) {
-  .slider {
-    width: auto;
-    height: 100vh;
-  }
+/* Background images for slides */
+.slide:first-child {
+  background: url("1.png") no-repeat center top/cover;
 }
 
-/* Adjustments for different screen sizes */
+.slide:nth-child(2) {
+  background: url("2.png") no-repeat center top/cover;
+}
+
+/* ... Repeat for other slides ... */
+
+.buttons button#prev {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+}
+
+.buttons button#next {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+}
+
+.buttons button {
+  border: 2px solid #e5ebf3;
+  background-color: transparent;
+  color: #e5ebf3;
+  cursor: pointer;
+  padding: 13px 15px;
+  border-radius: 50%;
+  outline: none;
+}
+
+.buttons button:hover {
+  background-color: #e5ebf3;
+  color: #362a2b;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .slide {
-    /* Add specific styles for mobile devices if needed */
+  .slider, .slide {
+    height: 60vh; /* Adjust for smaller screens */
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .slide {
-    /* Add specific styles for tablets if needed */
+@media (min-width: 769px) {
+  .slider, .slide {
+    height: 80vh; /* Adjust for larger screens */
   }
 }
