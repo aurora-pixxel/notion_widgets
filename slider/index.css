@@ -15,8 +15,8 @@ body {
 .slider {
   position: relative;
   width: 100%;
-  height: 120vh; /* Adjust height as necessary */
-  overflow: hidden;
+  height: 100%; /* Adjust height as necessary */
+/*   overflow: hidden; */
 }
 
 .slide {
@@ -72,14 +72,14 @@ body {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .slider, .slide {
-    height: 80vh; /* Adjust for smaller screens */
+    height: 80vh; /* Adjust for smaller screens */ */
   }
 }
-
+/* 
 @media (min-width: 769px) {
-  .slider, .slide {
-    height: 120vh; /* Adjust for larger screens */
+  .slider, .slide { */
+/*     height: 120vh; /* Adjust for larger screens */ */
   }
 }
